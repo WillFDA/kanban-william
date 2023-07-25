@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 const ThemeSwitcher = () => {
@@ -7,16 +7,23 @@ const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    const prefersDarkMode =
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    if (!theme) {
+    const localStorageTheme = window.localStorage.getItem("theme");
+    if (!localStorageTheme) {
+      const prefersDarkMode = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
       setTheme(prefersDarkMode ? "dark" : "light");
+    } else {
+      setTheme(localStorageTheme);
     }
-
     setMounted(true);
   }, [theme, setTheme]);
+
+  const handleThemeChange = (newTheme) => {
+    setTheme(newTheme);
+    window.localStorage.setItem("theme", newTheme);
+  };
+
   if (!mounted) {
     return null;
   }
@@ -26,13 +33,13 @@ const ThemeSwitcher = () => {
       The current theme is: {theme}
       <button
         className="p-2 bg-black text-white dark:bg-white dark:text-black"
-        onClick={() => setTheme("light")}
+        onClick={() => handleThemeChange("light")}
       >
         Light Mode
       </button>
       <button
         className="p-2 bg-black text-white dark:bg-white dark:text-black"
-        onClick={() => setTheme("dark")}
+        onClick={() => handleThemeChange("dark")}
       >
         Dark Mode
       </button>
