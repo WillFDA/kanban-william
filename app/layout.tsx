@@ -1,6 +1,5 @@
 import Providers from "./Providers";
 import ThemeSwitcher from "./ThemeSwitcher";
-import Button from "./components/Button";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
@@ -29,7 +28,6 @@ export default function RootLayout({
     >
       <body className={jakarta.className}>
         <Providers>
-          <ThemeSwitcher />
           {children}
         </Providers>
       </body>

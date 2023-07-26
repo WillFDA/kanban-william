@@ -1,8 +1,11 @@
 
 import Image from "next/image";
-import Button from "./components/Button";
+import ThemeSwitcher from "./ThemeSwitcher";
+
 
 export default function Home() {
   
-  return <div><Button text="Click Me" type="secondary" /></div>;
+  return <div>
+    <ThemeSwitcher />
+  </div>;
 }

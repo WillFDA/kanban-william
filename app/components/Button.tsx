@@ -10,7 +10,7 @@ type Props = {
 const buttonStyles = {
   primaryl: 'text-white bg-main-purple py-4 text-[15px] font-bold hover:bg-main-purple-hover',
   primarys: 'text-white bg-main-purple py-2 text-[13px] font-bold hover:bg-main-purple-hover',
-  secondary: 'text-main-purple bg-light-grey py-2 dark:bg-white text-[13px] hover:bg-main-purple-hover',
+  secondary: 'text-main-purple bg-light-grey py-2 dark:bg-white  text-[13px] hover:bg-main-purple-hover',
   destructive: 'text-white bg-main-red hover:bg-main-red-hover py-2 text-[13px]',
 }
 
