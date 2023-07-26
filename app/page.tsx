@@ -1,5 +1,8 @@
+
 import Image from "next/image";
+import Button from "./components/Button";
 
 export default function Home() {
-  return <div>Hello world</div>;
+  
+  return <div><Button text="Click Me" type="secondary" /></div>;
 }
