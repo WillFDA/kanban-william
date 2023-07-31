@@ -1,3 +1,4 @@
+import { ReduxProvider } from "@/Redux/Reduxprovider";
 import Providers from "./Providers";
 import ThemeSwitcher from "./ThemeSwitcher";
 import "./globals.css";
@@ -28,7 +29,7 @@ export default function RootLayout({
     >
       <body className={jakarta.className}>
         <Providers>
-          {children}
+          <ReduxProvider>{children}</ReduxProvider>
         </Providers>
       </body>
     </html>
