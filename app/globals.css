@@ -2,45 +2,102 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 .heading-xl {
-    font-weight: 700;
-    font-size: 1.5rem;
-    line-height:1.875rem ;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
 }
 
 .heading-l {
-    font-size: 1.125rem;
-    line-height: 1.438rem;
-    font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.438rem;
+  font-weight: 700;
 }
 
 .heading-m {
-    font-size: 0.938rem;
-    font-weight: 700;
-    line-height: 1.188rem;
+  font-size: 0.938rem;
+  font-weight: 700;
+  line-height: 1.188rem;
 }
 
 .heading-s {
-    font-size: 0.75rem;
-    font-weight: 700;
-    line-height: 0.938rem;
-    letter-spacing: 2.4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 0.938rem;
+  letter-spacing: 2.4px;
 }
 
 .p-med {
-    font-size: 0.813rem;
-    font-weight: 500;
-    line-height:1.438rem ;
+  font-size: 0.813rem;
+  font-weight: 500;
+  line-height: 1.438rem;
 }
 
 .p-bold {
-    font-size: 0.75rem;
-    font-weight: 700;
-    line-height: 0.938rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 0.938rem;
 }
 
+/* --------- Buttons --------- */
+
 button {
-    transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  border-radius: 2rem;
+}
+
+.primary-L {
+  color: white;
+  background-color: #635fc7;
+  padding: 1rem;
+  font-size: 15px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.primary-L:hover {
+  background-color: #a8a4ff;
+}
+
+.primary-S {
+  color: white;
+  background-color: #635fc7;
+  padding: 0.5rem;
+  font-size: 13px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.primary-S:hover {
+  background-color: #a8a4ff;
+}
+
+.secondary {
+  color: #635fc7;
+  background-color: #e4ebfa;
+  padding: 0.5rem;
+  font-size: 13px;
+  transition: background-color 0.2s;
+}
+
+@media (prefers-color-scheme: dark) {
+  .secondary {
+    background-color: white;
+  }
+}
+
+.secondary:hover {
+  background-color: #a8a4ff;
+}
+
+.destructive {
+  color: white;
+  background-color: #ea5555;
+  transition: background-color 0.2s;
+  padding: 0.5rem;
+  font-size: 13px;
+}
+
+.destructive:hover {
+  background-color: #ff9898;
 }
