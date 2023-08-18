@@ -2,12 +2,13 @@
 import Image from "next/image";
 import React from "react";
 import ThemeSwitcher from "../ThemeSwitcher";
-import { useSelector } from "react-redux";
+
 import { closeNav, openNav } from "../../Redux/features/openCloseNavSlice";
-import { useDispatch } from "react-redux";
+import { useAppDispatch, useAppSelector } from "@/Redux/store";
 const Navbar = () => {
-  const isOpen = useSelector((state) => state.openCloseNav.isOpen);
-  const dispatch = useDispatch();
+  const isOpen = useAppSelector((state) => state.openCloseNav.isOpen);
+
+  const dispatch = useAppDispatch();
 
   const handleHideSidebarClick = () => {
     dispatch(closeNav());
@@ -19,8 +20,8 @@ const Navbar = () => {
   return (
     <>
       <aside
-        className={`lg:h-[calc(100vh-96px)] md:h-[calc(100vh-80px)] dark:bg-dark-grey bg-white absolute md:top-20 lg:top-24 hidden md:block  md:w-[260px] lg:w-[300px] py-[18px] pb-11 border-r-2 border-light-grey dark:border-grey pl-8 pr-6 transition-all ${
-          isOpen ? "left-0" : "-left-full"
+        className={`lg:h-[calc(100vh-96px)] md:h-[calc(100vh-80px)] dark:bg-dark-grey  bg-white absolute md:top-20 lg:top-24  md:block  md:w-[260px] lg:w-[300px] md:py-[18px] md:pb-11 md:border-r-2 border-light-grey dark:border-grey md:pl-8 md:pr-6 py-4 px-3 w-4/5 rounded-lg md:rounded-none left-0 right-0 ml-auto mr-auto md:ml-0 ${
+          isOpen ? "md:left-0 top-20 " : "md:-left-full hidden"
         } `}
       >
         <div className=" h-full flex flex-col justify-between">
@@ -59,7 +60,9 @@ const Navbar = () => {
         onClick={handleShowSidebarClick}
         className={` z-20 transition-all
     bg-main-purple rounded-r-full absolute  bottom-11 w-14 h-12 
-    flex items-center justify-start pl-4 ${isOpen ? "-left-full" : "left-0"}
+    hidden md:flex items-center justify-start pl-4 ${
+      isOpen ? "-left-full" : "left-0"
+    }
   `}
       >
         <Image

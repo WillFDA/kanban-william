@@ -1,12 +1,13 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "@/Redux/store";
 const Logo = () => {
-  const isOpen = useSelector((state) => state.openCloseNav.isOpen);
+  const isOpen = useAppSelector((state) => state.openCloseNav.isOpen);
+
   return (
     <div
-      className={`bg-white dark:bg-dark-grey px-6 border-r-2 border-light-grey dark:border-grey border-b-2 flex gap-4 items-center h-16 md:h-20 lg:h-24 transition-all ${
+      className={`bg-white dark:bg-dark-grey px-6 border-r-2 border-light-grey dark:border-grey border-b-2 flex gap-4 items-center h-16 md:h-20 lg:h-24 ${
         isOpen ? "md:w-[260px] lg:w-[300px]" : ""
       }`}
     >
